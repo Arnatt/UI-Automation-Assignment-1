@@ -116,7 +116,7 @@ describe('Login and Add Resource', function() {
         
         await driver.findElement(By.id("ASPxPanel2_ContentPlaceHolder1_ST_user_txtSearch_I")).click();
         await driver.sleep(2000)     
-        await driver.findElement(By.id("ASPxPanel2_ContentPlaceHolder1_ST_user_txtSearch_I")).sendKeys("test")
+        await driver.findElement(By.id("ASPxPanel2_ContentPlaceHolder1_ST_user_txtSearch_I")).sendKeys(data[i].firstName)
         await driver.findElement(By.id("ASPxPanel2_ContentPlaceHolder1_Search_ASPxButton_CD")).click()
         await driver.sleep(5000)
     }
