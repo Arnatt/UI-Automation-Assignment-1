@@ -1,0 +1,46 @@
+{
+  "userId": [
+    {
+      "firstName": "Test Resource 01",
+      "lastName": "SCS",
+      "discipline": [
+        "Damage Assessment",
+        "Distribution Line",
+        "Substation",
+        "Support",
+        "Transmission Line",
+        "UAS",
+        "UG Network",
+        "Vegetation Management"
+      ]
+    },
+    {
+      "firstName": "Test Resource 02",
+      "lastName": "SCS",
+      "discipline": [
+        "Damage Assessment",
+        "Distribution Line",
+        "Substation",
+        "Support",
+        "Transmission Line",
+        "UAS",
+        "UG Network",
+        "Vegetation Management"
+      ]
+    },
+    {
+      "firstName": "Test Resource 03",
+      "lastName": "SCS",
+      "discipline": [
+        "Damage Assessment",
+        "Distribution Line",
+        "Substation",
+        "Support",
+        "Transmission Line",
+        "UAS",
+        "UG Network",
+        "Vegetation Management"
+      ]
+    }
+  ]
+}
