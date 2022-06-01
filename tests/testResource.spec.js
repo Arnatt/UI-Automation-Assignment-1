@@ -64,7 +64,6 @@ describe('Login and Add Resource', function() {
             count = 18;
           } else if (data[0].discipline[disc] === "Transmission Line") {
             count = 33;
-            clickS = 4
           } else if (data[0].discipline[disc] === "UAS") {
             count = 2;
           } else if (data[0].discipline[disc] === "UG Network") {

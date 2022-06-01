@@ -3,9 +3,6 @@ const { Builder, By, Key, until } = require('selenium-webdriver')
 const assert = require('assert')
 require("chromedriver");
 
-for(let i = 0;i<3;i++){
-  console.log(i);
-}
 
 describe('Login and add supervisor', function() {
   this.timeout(600000)
@@ -39,7 +36,7 @@ describe('Login and add supervisor', function() {
     await driver.sleep(1000)
     await driver.findElement(By.xpath("(//img[@alt='v'])[2]")).click()
     await driver.sleep(1000)
-    await driver.findElement(By.xpath("//td[@id='ASPxPanel2_ContentPlaceHolder1_gluEvents_DDD_gv_tccell6_0']//td[1]")).click()
+    await driver.findElement(By.id("ASPxPanel2_ContentPlaceHolder1_gluEvents_DDD_gv_tccell11_0")).click()
     await driver.sleep(5000)
 
     // Select for Add Supervisor
@@ -55,13 +52,13 @@ describe('Login and add supervisor', function() {
     await driver.sleep(5000)
 
     // Add supervisor | check notification message 
-    try {
-      const noti = await driver.findElement(By.id("TopPanel_notifyDiv_Content")).getText()
-      assert.strictEqual(noti,'The Supervisor has been assigned to selected resource pool/crew sheet successfully.')
-      console.log("This notification is pass")
-    } catch(error) {
-      console.log("Error: ", error)
-    }
+    // try {
+    //   const noti = await driver.findElement(By.id("TopPanel_notifyDiv_Content")).getText()
+    //   assert.strictEqual(noti,'The Supervisor has been assigned to selected resource pool/crew sheet successfully.')
+    //   console.log("This notification is pass")
+    // } catch(error) {
+    //   console.log("Error: ", error)
+    // }
 
     // Add Location
     await driver.findElement(By.xpath("//div[@id='ASPxPanel2_ContentPlaceHolder1_cpnTokenDeleted_cpnMain_btnAssignDestination']")).click()
@@ -75,13 +72,13 @@ describe('Login and add supervisor', function() {
     await driver.sleep(3000)
 
     // Add location | check notification message 
-    try {
-      const noti1 = await driver.findElement(By.id("TopPanel_notifyDiv_Content")).getText()
-      assert.strictEqual(noti1,'The destination has been assigned to selected resource pool/crew sheet successfully.')
-      console.log("This notification is pass")
-    } catch(error) {
-      console.log("Error: ", error)
-    }
+    // try {
+    //   const noti1 = await driver.findElement(By.id("TopPanel_notifyDiv_Content")).getText()
+    //   assert.strictEqual(noti1,'The destination has been assigned to selected resource pool/crew sheet successfully.')
+    //   console.log("This notification is pass")
+    // } catch(error) {
+    //   console.log("Error: ", error)
+    // }
     
 
     //Add date time and text   
@@ -107,30 +104,32 @@ describe('Login and add supervisor', function() {
     await driver.sleep(3000)
     await driver.findElement(By.id("ASPxPanel2_ContentPlaceHolder1_cpnTokenDeleted_cpnMain_pucBtnAssignEvent_assign_event_mscwf_ASPxComboBox_CallbackPanel_assign_event_mscwf_ASPxComboBox_I")).click()
     await driver.sleep(3000)
-    await driver.findElement(By.id("ASPxPanel2_ContentPlaceHolder1_cpnTokenDeleted_cpnMain_pucBtnAssignEvent_assign_event_mscwf_ASPxComboBox_CallbackPanel_assign_event_mscwf_ASPxComboBox_DDD_L_LBI9T0")).click()
+    await driver.findElement(By.id("ASPxPanel2_ContentPlaceHolder1_cpnTokenDeleted_cpnMain_pucBtnAssignEvent_assign_event_mscwf_ASPxComboBox_CallbackPanel_assign_event_mscwf_ASPxComboBox_DDD_L_LBI4T0")).click()
     await driver.sleep(3000)
     await driver.findElement(By.xpath("//img[@id='ASPxPanel2_ContentPlaceHolder1_cpnTokenDeleted_cpnMain_pucBtnAssignEvent_dtEventDate_B-1Img']")).click()
     await driver.sleep(3000)
-    await driver.findElement(By.id("ASPxPanel2_ContentPlaceHolder1_cpnTokenDeleted_cpnMain_pucBtnAssignEvent_dtEventDate_I")).sendKeys("06/01/2565 12:00 AM")
+    //await driver.findElement(By.id("ASPxPanel2_ContentPlaceHolder1_cpnTokenDeleted_cpnMain_pucBtnAssignEvent_dtEventDate_I")).sendKeys("06/01/2565 12:00 AM")
+    await driver.findElement(By.xpath("//*[@id='ASPxPanel2_ContentPlaceHolder1_cpnTokenDeleted_cpnMain_pucBtnAssignEvent_dtEventDate_DDD_C_mt']/tbody/tr[2]/td[3]")).click()
     await driver.sleep(3000)
-    await driver.findElement(By.id("ASPxPanel2_ContentPlaceHolder1_cpnTokenDeleted_cpnMain_pucBtnAssignEvent_dtEventDate_I")).sendKeys(Key.ENTER)
+    await driver.findElement(By.xpath("//td[@id='ASPxPanel2_ContentPlaceHolder1_cpnTokenDeleted_cpnMain_pucBtnAssignEvent_dtEventDate_DDD_C_BO']")).click()
+    //await driver.findElement(By.id("ASPxPanel2_ContentPlaceHolder1_cpnTokenDeleted_cpnMain_pucBtnAssignEvent_dtEventDate_I")).sendKeys(Key.ENTER)
     await driver.sleep(3000)
     await driver.findElement(By.xpath("//span[text()='Apply Event']")).click()
-    await driver.sleep(3000)
+    await driver.sleep(15000)
 
     // Add location | check notification message 
-    try {
-      const noti2 = await driver.findElement(By.id("TopPanel_notifyDiv_Content")).getText()
-      assert.strictEqual(noti2,'The event has been applied to selected resource pool/crew sheet.')
-      console.log("This notification is pass")
-    } catch(error) {
-      console.log("Error: ", error)
-    }
+    // try {
+    //   const noti2 = await driver.findElement(By.id("TopPanel_notifyDiv_Content")).getText()
+    //   assert.strictEqual(noti2,'The event has been applied to selected resource pool/crew sheet.')
+    //   console.log("This notification is pass")
+    // } catch(error) {
+    //   console.log("Error: ", error)
+    // }
 
     // Check move to
     await driver.findElement(By.id("TopPanel_gluEvents_B-1Img")).click()
     await driver.sleep(3000)
-    await driver.findElement(By.id("TopPanel_gluEvents_DDD_gv_DXDataRow11")).click()
+    await driver.findElement(By.id("TopPanel_gluEvents_DDD_gv_DXDataRow6")).click()
     await driver.sleep(10000)
     
   })
