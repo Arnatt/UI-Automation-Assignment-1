@@ -1,7 +1,7 @@
 {
   "userId": [
     {
-      "firstName": "Test Resource 01",
+      "firstName": "TestResource04",
       "lastName": "SCS",
       "discipline": [
         "Damage Assessment",
@@ -15,7 +15,7 @@
       ]
     },
     {
-      "firstName": "Test Resource 02",
+      "firstName": "TestResource05",
       "lastName": "SCS",
       "discipline": [
         "Damage Assessment",
@@ -29,7 +29,7 @@
       ]
     },
     {
-      "firstName": "Test Resource 03",
+      "firstName": "TestResource06",
       "lastName": "SCS",
       "discipline": [
         "Damage Assessment",

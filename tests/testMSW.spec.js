@@ -21,6 +21,9 @@ describe('Login and add supervisor', function() {
   it('Login and add supervisor', async function() {
     await driver.get("https://wrmstormhotfixscs.azurewebsites.net/default.aspx")
     await driver.manage().window().setRect({ width: 1280, height: 720 })
+    for(let out=0; out<2; out++){
+      driver.findElement(By.tagName("html")).sendKeys(Key.chord(Key.CONTROL,Key.SUBTRACT));
+     }
     // Login Page
     await driver.findElement(By.id("AdvanceSearch_ASPxButton1_CD")).click()
     await driver.findElement(By.id("username")).click()
@@ -84,7 +87,7 @@ describe('Login and add supervisor', function() {
     //Add date time and text   
     await driver.findElement(By.id("ASPxPanel2_ContentPlaceHolder1_cpnTokenDeleted_cpnMain_pucBtnAssignDestination_dtETAAssignDestination_B-1Img")).click()
     await driver.sleep(3000)
-    await driver.findElement(By.id("ASPxPanel2_ContentPlaceHolder1_cpnTokenDeleted_cpnMain_pucBtnAssignDestination_dtETAAssignDestination_I")).sendKeys("05/30/2565 06:30 AM")
+    await driver.findElement(By.id("ASPxPanel2_ContentPlaceHolder1_cpnTokenDeleted_cpnMain_pucBtnAssignDestination_dtETAAssignDestination_I")).sendKeys("06/01/2565 06:30 AM")
     await driver.sleep(3000)
     /* 
     await driver.findElement(By.xpath("(//td[contains(@class,'dxeCalendarDay_DevEx dxeCalendarToday_DevEx')])[2]")).click()
@@ -104,11 +107,11 @@ describe('Login and add supervisor', function() {
     await driver.sleep(3000)
     await driver.findElement(By.id("ASPxPanel2_ContentPlaceHolder1_cpnTokenDeleted_cpnMain_pucBtnAssignEvent_assign_event_mscwf_ASPxComboBox_CallbackPanel_assign_event_mscwf_ASPxComboBox_I")).click()
     await driver.sleep(3000)
-    await driver.findElement(By.id("ASPxPanel2_ContentPlaceHolder1_cpnTokenDeleted_cpnMain_pucBtnAssignEvent_assign_event_mscwf_ASPxComboBox_CallbackPanel_assign_event_mscwf_ASPxComboBox_DDD_L_LBI8T0")).click()
+    await driver.findElement(By.id("ASPxPanel2_ContentPlaceHolder1_cpnTokenDeleted_cpnMain_pucBtnAssignEvent_assign_event_mscwf_ASPxComboBox_CallbackPanel_assign_event_mscwf_ASPxComboBox_DDD_L_LBI9T0")).click()
     await driver.sleep(3000)
     await driver.findElement(By.xpath("//img[@id='ASPxPanel2_ContentPlaceHolder1_cpnTokenDeleted_cpnMain_pucBtnAssignEvent_dtEventDate_B-1Img']")).click()
     await driver.sleep(3000)
-    await driver.findElement(By.id("ASPxPanel2_ContentPlaceHolder1_cpnTokenDeleted_cpnMain_pucBtnAssignEvent_dtEventDate_I")).sendKeys("05/30/2565 12:00 AM")
+    await driver.findElement(By.id("ASPxPanel2_ContentPlaceHolder1_cpnTokenDeleted_cpnMain_pucBtnAssignEvent_dtEventDate_I")).sendKeys("06/01/2565 12:00 AM")
     await driver.sleep(3000)
     await driver.findElement(By.id("ASPxPanel2_ContentPlaceHolder1_cpnTokenDeleted_cpnMain_pucBtnAssignEvent_dtEventDate_I")).sendKeys(Key.ENTER)
     await driver.sleep(3000)
@@ -127,7 +130,7 @@ describe('Login and add supervisor', function() {
     // Check move to
     await driver.findElement(By.id("TopPanel_gluEvents_B-1Img")).click()
     await driver.sleep(3000)
-    await driver.findElement(By.css("#TopPanel_gluEvents_DDD_gv_tccell10_0 .EventDropdownColEventName")).click()
+    await driver.findElement(By.id("TopPanel_gluEvents_DDD_gv_DXDataRow11")).click()
     await driver.sleep(10000)
     
   })
