@@ -101,24 +101,35 @@ describe('Login and Add Resource', function() {
         await driver.sleep(5000)
 
         // Check Notifications
-        try {
-            const noti = await driver.findElement(By.id("TopPanel_notifyDiv_Content")).getText()
-            assert.strictEqual(noti,'Resource has been added successfully.')
-            console.log("This notification is pass")
-        } catch(error) {
-            console.log("Error: 555 ", error)
-        }
+        // try {
+        //     const noti = await driver.findElement(By.id("TopPanel_notifyDiv_Content")).getText()
+        //     assert.strictEqual(noti,'Resource has been added successfully.')
+        //     console.log("This notification is pass")
+        // } catch(error) {
+        //     console.log("Error: 555 ", error)
+        // }
         
         //Search
         await driver.findElement(By.id("ASPxPanel2_ContentPlaceHolder1_TABManageDiscipline_tbDisciplineTab_AT"+disc+"T")).click();
-        await driver.sleep(5000)
-        
-        await driver.findElement(By.id("ASPxPanel2_ContentPlaceHolder1_ST_user_txtSearch_I")).click();
-        await driver.sleep(2000)     
-        await driver.findElement(By.id("ASPxPanel2_ContentPlaceHolder1_ST_user_txtSearch_I")).sendKeys(data[i].firstName)
-        await driver.findElement(By.id("ASPxPanel2_ContentPlaceHolder1_Search_ASPxButton_CD")).click()
-        await driver.sleep(5000)
-    }
+        await driver.sleep(5000);
+        await driver
+          .findElement(
+            By.id("ASPxPanel2_ContentPlaceHolder1_ST_user_txtSearch_I")
+          )
+          .click();
+        await driver.sleep(3000);
+        await driver
+          .findElement(
+            By.id("ASPxPanel2_ContentPlaceHolder1_ST_user_txtSearch_I")
+          )
+          .sendKeys(data[i].firstName);
+        await driver
+          .findElement(
+            By.id("ASPxPanel2_ContentPlaceHolder1_Search_ASPxButton_CD")
+          )
+          .click();
+          await driver.sleep(3000);
+      }
     
     
 
